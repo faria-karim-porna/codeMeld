@@ -1,11 +1,18 @@
 import Editor from "@monaco-editor/react";
+import { useState } from "react";
+
 function App() {
-  const clickHandler = () => {
+  const [codes, setCodes] = useState(``);
+  const [outputCodes, setOutputCodes] = useState(``);
+  function convertToMultiline(inputString: string) {
+    let multilineString = inputString.replace(/\\r|\r/g, "");
+   multilineString = multilineString.replace(/\\n/g, "\n");
+    console.log("multi: ", multilineString)
+    return multilineString;
+  }
+  const convert = () => {
     const request = {
-      codes: `// Function to compute the product of p1 and p2
-      function myFunction(p1, p2) {
-        return p1 * p2;
-      }`,
+      codes: codes,
       inputLanguage: `javascript`,
       outputLanguage: `python`,
     };
@@ -16,20 +23,40 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        const output = convertToMultiline((data[0]));
+        setOutputCodes(output);
+        console.log(data[0]);
+        console.log(output);
       });
   };
+
   return (
     <>
-      <div className="border border-danger w-50" onClick={() => clickHandler()}>
-        Hello From CodeMeld
+      <div className="d-flex align-items-center justify-content-between p-4">
+        <div className="border border-3 border-danger">
+          <Editor
+            height={"500px"}
+            width={"600px"}
+            theme="vs-dark"
+            language="javascript"
+            onChange={(value) => {
+              setCodes(value);
+            }}
+          />
+        </div>
+        <div onClick={() => convert()} className="bg-danger">
+          Convert
+        </div>
+        <div className="border border-danger">
+          <Editor
+            height={"500px"}
+            width={"600px"}
+            theme="vs-dark"
+            language="python"
+            value={outputCodes}
+          />
+        </div>
       </div>
-      <Editor
-        height={"100vh"}
-        width={"100%"}
-        theme="vs-dark"
-        language="javascript"
-      />
     </>
   );
 }
