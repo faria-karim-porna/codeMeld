@@ -1,5 +1,25 @@
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-body{
-    margin: 0;
-    background-color: black;
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Press Start 2P";
+  padding: 20px;
+}
+
+.editor-area {
+  box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
+  padding: 15px 0px;
+  background-color: #1e1e1e;
+}
+
+.disabled-editor {
+  height: 400px;
+  width: 450px;
+  position: absolute;
+  top: 0px;
 }

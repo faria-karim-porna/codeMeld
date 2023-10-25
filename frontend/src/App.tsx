@@ -6,8 +6,7 @@ function App() {
   const [outputCodes, setOutputCodes] = useState(``);
   function convertToMultiline(inputString: string) {
     let multilineString = inputString.replace(/\\r|\r/g, "");
-   multilineString = multilineString.replace(/\\n/g, "\n");
-    console.log("multi: ", multilineString)
+    multilineString = multilineString.replace(/\\n/g, "\n");
     return multilineString;
   }
   const convert = () => {
@@ -23,20 +22,18 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        const output = convertToMultiline((data[0]));
+        const output = convertToMultiline(data[0]);
         setOutputCodes(output);
-        console.log(data[0]);
-        console.log(output);
       });
   };
 
   return (
     <>
       <div className="d-flex align-items-center justify-content-between p-4">
-        <div className="border border-3 border-danger">
+        <div className="editor-area">
           <Editor
-            height={"500px"}
-            width={"600px"}
+            height={"400px"}
+            width={"450px"}
             theme="vs-dark"
             language="javascript"
             onChange={(value) => {
@@ -47,14 +44,17 @@ function App() {
         <div onClick={() => convert()} className="bg-danger">
           Convert
         </div>
-        <div className="border border-danger">
-          <Editor
-            height={"500px"}
-            width={"600px"}
-            theme="vs-dark"
-            language="python"
-            value={outputCodes}
-          />
+        <div className="editor-area">
+          <div className="position-relative">
+            <Editor
+              height={"400px"}
+              width={"450px"}
+              theme="vs-dark"
+              language="python"
+              value={outputCodes}
+            />
+            <div className="disabled-editor"></div>
+          </div>
         </div>
       </div>
     </>
