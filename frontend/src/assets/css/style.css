@@ -9,10 +9,58 @@ body {
   padding: 20px;
 }
 
-.header{
-    color: #00ffa0;
-    font-size: 25px;
-    text-align: center;
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .loader {
+  position: relative;
+  display: flex;
+}
+
+section .loader .dot {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  margin: 15px 10px;
+  border-radius: 50%;
+  transform: scale(0.2);
+  animation: animateDot 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animateDot {
+  0% {
+    transform: scale(0.2);
+    background: #fff;
+  }
+  10% {
+    transform: scale(1);
+    background: #00ffa0;
+    box-shadow: 0 0 10px #00ffa0,
+    0 0 20px #00ffa0,
+    0 0 40px #00ffa0,
+    0 0 60px #00ffa0,
+    0 0 80px #00ffa0,
+    0 0 100px #00ffa0;
+  }
+  50%,
+  100% {
+    transform: scale(0.2);
+    background: #fff;
+  }
+}
+
+.header {
+  color: #00ffa0;
+  font-size: 25px;
+  text-align: center;
 }
 
 .editor-area {
