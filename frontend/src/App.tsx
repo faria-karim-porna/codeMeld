@@ -29,6 +29,7 @@ function App() {
 
   return (
     <>
+      <div className="header">CodeMeld</div>
       <div className="d-flex align-items-center justify-content-between p-4">
         <div className="editor-area">
           <Editor
