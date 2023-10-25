@@ -1,3 +1,4 @@
+import Editor from "@monaco-editor/react";
 function App() {
   const clickHandler = () => {
     const request = {
@@ -23,6 +24,12 @@ function App() {
       <div className="border border-danger w-50" onClick={() => clickHandler()}>
         Hello From CodeMeld
       </div>
+      <Editor
+        height={"100vh"}
+        width={"100%"}
+        theme="vs-dark"
+        language="javascript"
+      />
     </>
   );
 }
