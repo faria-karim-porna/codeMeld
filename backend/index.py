@@ -1,5 +1,6 @@
 
 from flask import flash, request, jsonify, render_template
+from flask_cors import CORS
 from flask_mysqldb import MySQL
 from flask import Flask
 import mysql.connector
@@ -8,7 +9,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 myDB = mysql.connector.connect(
     host = "cloud.mindsdb.com",
     user = os.environ.get("USER"),
