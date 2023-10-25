@@ -32,8 +32,7 @@ section .loader .dot {
   margin: 15px 10px;
   border-radius: 50%;
   transform: scale(0.2);
-  animation: animateDot 2s linear infinite;
-  animation-delay: calc(0.1s * var(--i));
+  animation: none;
 }
 @keyframes animateDot {
   0% {
