@@ -71,7 +71,7 @@ function Background(props: React.PropsWithChildren) {
   return (
     <>
       <div className="background-container">
-        <section>
+        <div className="dot-background">
           {loader.map((_, index) => (
             <div key={index} className="loader">
               {dots.map((_, index) => (
@@ -79,7 +79,7 @@ function Background(props: React.PropsWithChildren) {
               ))}
             </div>
           ))}
-        </section>
+        </div>
         <div className="content">{props.children}</div>
       </div>
     </>
