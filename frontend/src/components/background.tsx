@@ -11,7 +11,7 @@ function Background() {
     setInterval(() => {
       let delayTiming = 0;
       if (addAnimation) {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i <= 4; i++) {
           const dot = dotElements[i];
           dot.style.animation = "animateDot 2s linear";
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
@@ -29,33 +29,21 @@ function Background() {
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
           delayTiming = delayTiming + 1;
         }
-        for (let i = 160; i >=40; i = i - 40) {
+        for (let i = 160; i >= 40; i = i - 40) {
           const dot = dotElements[i];
           dot.style.animation = "animateDot 2s linear";
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
           delayTiming = delayTiming + 1;
         }
       } else {
-        for (let i = 0; i < 5; i++) {
-          const dot = dotElements[i];
-          dot.style.animation = "none";
-        }
-        for (let i = 4; i <= 40 * 4 + 4; i = i + 40) {
-          const dot = dotElements[i];
-          dot.style.animation = "none";
-        }
-        for (let i = 164; i >= 160; i--) {
-          const dot = dotElements[i];
-          dot.style.animation = "none";
-        }
-        for (let i = 160; i >=40; i = i - 40) {
+        for (let i = 0; i < 1000; i++) {
           const dot = dotElements[i];
           dot.style.animation = "none";
         }
       }
 
       addAnimation = !addAnimation;
-    }, 10000);
+    }, 3000);
   }, []);
   const dots = Array(40).fill(null);
   const loader = Array(25).fill(null);
