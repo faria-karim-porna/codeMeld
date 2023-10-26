@@ -23,13 +23,13 @@ function Background() {
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
           delayTiming = delayTiming + 1;
         }
-        for (let i = 204; i > 199; i--) {
+        for (let i = 164; i >= 160; i--) {
           const dot = dotElements[i];
           dot.style.animation = "animateDot 2s linear";
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
           delayTiming = delayTiming + 1;
         }
-        for (let i = 200; i > -1; i = i - 40) {
+        for (let i = 160; i >=40; i = i - 40) {
           const dot = dotElements[i];
           dot.style.animation = "animateDot 2s linear";
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
@@ -44,11 +44,11 @@ function Background() {
           const dot = dotElements[i];
           dot.style.animation = "none";
         }
-        for (let i = 204; i > 199; i--) {
+        for (let i = 164; i >= 160; i--) {
           const dot = dotElements[i];
           dot.style.animation = "none";
         }
-        for (let i = 200; i > -1; i = i - 40) {
+        for (let i = 160; i >=40; i = i - 40) {
           const dot = dotElements[i];
           dot.style.animation = "none";
         }
