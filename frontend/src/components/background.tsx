@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-
-function Background() {
+import React, { useEffect } from "react";
+function Background(props: React.PropsWithChildren) {
   useEffect(() => {
     const dotElements = document.getElementsByClassName(
       "dot"
@@ -16,18 +15,18 @@ function Background() {
           topLineStart = 85;
         } else if (group == 2) {
           topLineStart = 295;
-        }else if (group == 3) {
+        } else if (group == 3) {
           topLineStart = 700;
-        }else if (group == 4) {
+        } else if (group == 4) {
           topLineStart = 285;
         }
-        let topLineEnd = topLineStart + 4;
-        let rightLineStart = topLineEnd;
-        let rightLineEnd = 40 * 4 + topLineEnd;
-        let bottomLineStart = rightLineEnd;
-        let bottomLineEnd = rightLineEnd - 4;
-        let leftLineStart = bottomLineEnd;
-        let leftLineEnd = bottomLineEnd - 40 * 3;
+        const topLineEnd = topLineStart + 4;
+        const rightLineStart = topLineEnd;
+        const rightLineEnd = 40 * 4 + topLineEnd;
+        const bottomLineStart = rightLineEnd;
+        const bottomLineEnd = rightLineEnd - 4;
+        const leftLineStart = bottomLineEnd;
+        const leftLineEnd = bottomLineEnd - 40 * 3;
         for (let i = topLineStart; i <= topLineEnd; i++) {
           const dot = dotElements[i];
           dot.style.animation = "animateDot 2s linear";
@@ -71,15 +70,18 @@ function Background() {
   const loader = Array(25).fill(null);
   return (
     <>
-      <section>
-        {loader.map((_, index) => (
-          <div key={index} className="loader">
-            {dots.map((_, index) => (
-              <div key={index} className="dot"></div>
-            ))}
-          </div>
-        ))}
-      </section>
+      <div className="background-container">
+        <section>
+          {loader.map((_, index) => (
+            <div key={index} className="loader">
+              {dots.map((_, index) => (
+                <div key={index} className="dot"></div>
+              ))}
+            </div>
+          ))}
+        </section>
+        <div className="content">{props.children}</div>
+      </div>
     </>
   );
 }
