@@ -6,9 +6,14 @@ body {
   margin: 0;
   background-color: black;
   font-family: "Press Start 2P";
-  padding: 20px;
 }
 
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 
 section .loader {
   position: relative;
