@@ -1,4 +1,3 @@
-import Editor from "@monaco-editor/react";
 import { useEffect } from "react";
 
 function Background() {
@@ -7,11 +6,56 @@ function Background() {
       "dot"
     ) as HTMLCollectionOf<HTMLDivElement>;
 
-    for (let i = 0; i < 10; i++) {
-      const dot = dotElements[i];
-      dot.style.animation = "animateDot 2s linear infinite";
-      dot.style.animationDelay = `${i * 0.1}s`;
-    }
+    let addAnimation = true;
+
+    setInterval(() => {
+      let delayTiming = 0;
+      if (addAnimation) {
+        for (let i = 0; i < 5; i++) {
+          const dot = dotElements[i];
+          dot.style.animation = "animateDot 2s linear";
+          dot.style.animationDelay = `${delayTiming * 0.1}s`;
+          delayTiming = delayTiming + 1;
+        }
+        for (let i = 4; i <= 40 * 4 + 4; i = i + 40) {
+          const dot = dotElements[i];
+          dot.style.animation = "animateDot 2s linear";
+          dot.style.animationDelay = `${delayTiming * 0.1}s`;
+          delayTiming = delayTiming + 1;
+        }
+        for (let i = 204; i > 199; i--) {
+          const dot = dotElements[i];
+          dot.style.animation = "animateDot 2s linear";
+          dot.style.animationDelay = `${delayTiming * 0.1}s`;
+          delayTiming = delayTiming + 1;
+        }
+        for (let i = 200; i > -1; i = i - 40) {
+          const dot = dotElements[i];
+          dot.style.animation = "animateDot 2s linear";
+          dot.style.animationDelay = `${delayTiming * 0.1}s`;
+          delayTiming = delayTiming + 1;
+        }
+      } else {
+        for (let i = 0; i < 5; i++) {
+          const dot = dotElements[i];
+          dot.style.animation = "none";
+        }
+        for (let i = 4; i <= 40 * 4 + 4; i = i + 40) {
+          const dot = dotElements[i];
+          dot.style.animation = "none";
+        }
+        for (let i = 204; i > 199; i--) {
+          const dot = dotElements[i];
+          dot.style.animation = "none";
+        }
+        for (let i = 200; i > -1; i = i - 40) {
+          const dot = dotElements[i];
+          dot.style.animation = "none";
+        }
+      }
+
+      addAnimation = !addAnimation;
+    }, 10000);
   }, []);
   const dots = Array(40).fill(null);
   const loader = Array(25).fill(null);
