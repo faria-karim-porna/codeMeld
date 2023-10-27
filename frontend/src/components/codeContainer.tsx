@@ -15,7 +15,7 @@ function CodeContainer() {
       inputLanguage: `javascript`,
       outputLanguage: `python`,
     };
-    fetch("https://practice-xg0y.onrender.com/codeConverter", {
+    fetch("https://code-meld.onrender.com/codeConverter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(request),
