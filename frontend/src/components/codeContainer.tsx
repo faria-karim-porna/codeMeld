@@ -15,7 +15,7 @@ function CodeContainer() {
       inputLanguage: `javascript`,
       outputLanguage: `python`,
     };
-    fetch("http://127.0.0.1:5000/codeConverter", {
+    fetch("https://practice-xg0y.onrender.com/codeConverter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(request),
