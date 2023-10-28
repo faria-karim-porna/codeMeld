@@ -12,13 +12,17 @@ function Background(props: React.PropsWithChildren) {
       if (addAnimation) {
         let topLineStart = 85;
         if (group == 1) {
-          topLineStart = 85;
+          topLineStart = 83;
         } else if (group == 2) {
-          topLineStart = 295;
+          topLineStart = 775;
         } else if (group == 3) {
-          topLineStart = 700;
+          topLineStart = 190;
         } else if (group == 4) {
-          topLineStart = 285;
+          topLineStart = 213;
+        } else if (group == 5) {
+          topLineStart = 400;
+        } else if (group == 6) {
+          topLineStart = 785;
         }
         const topLineEnd = topLineStart + 4;
         const rightLineStart = topLineEnd;
@@ -51,7 +55,7 @@ function Background(props: React.PropsWithChildren) {
           dot.style.animationDelay = `${delayTiming * 0.1}s`;
           delayTiming = delayTiming + 1;
         }
-        if (group == 4) {
+        if (group == 6) {
           group = 1;
         } else {
           group = group + 1;
@@ -80,7 +84,9 @@ function Background(props: React.PropsWithChildren) {
             </div>
           ))}
         </div>
-        <div className="content">{props.children}</div>
+        <div className="w-100 d-flex justify-content-center">
+          <div className="content">{props.children}</div>
+        </div>
       </div>
     </>
   );
