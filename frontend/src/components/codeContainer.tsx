@@ -1,4 +1,7 @@
 import Editor from "@monaco-editor/react";
+import { useMemo } from "react";
+import { Utility } from "../utils/utility";
+import { useDeviceOrientation } from "../hooks/useDeviceOrientation";
 
 type CodeContainerProps = {
   isDisabled?: boolean;
@@ -9,14 +12,24 @@ type CodeContainerProps = {
 
 function CodeContainer(props: CodeContainerProps) {
   const { isDisabled, languageType, codes, setCodes } = props;
+  const isDesktop = useMemo(
+    () =>
+      Utility.BrowserWindowUtil.DeviceRenderCategory.Desktop.some(
+        Utility.BrowserWindowUtil.IsCurrentRenderDevice
+      ),
+    []
+  );
 
+  const { orientationText } = useDeviceOrientation();
   return (
     <>
       <div className="code-container">
         <div className="position-relative">
           <Editor
-            height={"50vh"}
-            width={"30vw"}
+            height={
+              isDesktop || orientationText === "Landscape" ? "50vh" : "30vh"
+            }
+            width={isDesktop || orientationText === "Landscape" ? "30vw" : "80vw"}
             theme="vs-dark"
             language={languageType}
             value={codes}
