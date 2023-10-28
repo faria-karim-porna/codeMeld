@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { languageTypes } from "../types/languageTypes";
 
-type languageTypes = {
-  displayName: string;
-  language: string;
+type SelectionProps = {
+  text: string;
+  selectedLanguage?: languageTypes;
+  setSelectedLanguage: React.Dispatch<
+    React.SetStateAction<undefined | languageTypes>
+  >;
 };
-function Selections() {
-  //text
-  // set method
-  // setter value
+function Selections(props: SelectionProps) {
+  const { text, selectedLanguage, setSelectedLanguage } = props;
+
   const languageList: languageTypes[] = [
     { displayName: "JavaScript", language: "javascript" },
     { displayName: "Python", language: "python" },
@@ -20,9 +23,6 @@ function Selections() {
     { displayName: "Dart", language: "dart" },
   ];
 
-  const [selectedLanguage, setSelectedLanguage] = useState<
-    undefined | languageTypes
-  >();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div className="selection">
@@ -37,7 +37,7 @@ function Selections() {
               : "selection-box"
           }
         >
-          {selectedLanguage ? selectedLanguage.displayName : "Input Language"}
+          {selectedLanguage ? selectedLanguage.displayName : text}
         </div>
         {isOpen ? (
           <div className="selection-dropdown">
