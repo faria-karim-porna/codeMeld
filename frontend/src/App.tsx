@@ -4,6 +4,7 @@ import Background from "./components/background";
 import Selections from "./components/selections";
 import { useState } from "react";
 import { languageTypes } from "./types/languageTypes";
+import ConvertButton from "./components/convertButton";
 
 function App() {
   const [inputLanguage, setInputLanguage] = useState<
@@ -12,6 +13,9 @@ function App() {
   const [convertedLanguage, setConvertedLanguage] = useState<
     undefined | languageTypes
   >();
+
+  const [inputCodes, setInputCodes] = useState<undefined | string>(``);
+  const [convertedCodes, setConvertedCodes] = useState<undefined | string>(``);
   return (
     <>
       <Background>
@@ -29,7 +33,20 @@ function App() {
               setSelectedLanguage={setConvertedLanguage}
             />
           </div>
-          <CodeContainer />
+          <div className="editor-area">
+            <CodeContainer codes={inputCodes} setCodes={setInputCodes} />
+            <ConvertButton
+              inputLanguage={inputLanguage?.displayName}
+              convertedLanguage={convertedLanguage?.displayName}
+              inputCodes={inputCodes}
+              setConvertedCodes={setConvertedCodes}
+            />
+            <CodeContainer
+              codes={convertedCodes}
+              setCodes={setConvertedCodes}
+              isDisabled={true}
+            />
+          </div>
         </>
       </Background>
     </>

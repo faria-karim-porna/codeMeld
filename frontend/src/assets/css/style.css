@@ -142,12 +142,19 @@ body {
   background-color: #fff;
 }
 
-.editor-area {
+.code-container {
   box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
   -webkit-box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: -1px -1px 31px 18px rgba(255, 255, 255, 0.3);
   padding: 15px 0px;
   background-color: #1e1e1e;
+}
+
+.editor-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
 }
 
 .disabled-editor {
