@@ -26,14 +26,22 @@ function Selections() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
-      <div>
-        <div onClick={() => setIsOpen(!isOpen)}>
+      <div className="selection">
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className={
+            selectedLanguage ? "active-selection-box" : "selection-box"
+          }
+        >
           {selectedLanguage ? selectedLanguage.displayName : "Input Language"}
         </div>
         {isOpen ? (
-          <div>
+          <div className="selection-dropdown">
             {languageList.map((lang) => (
-              <div onClick={() => setSelectedLanguage(lang)}>
+              <div
+                onClick={() => setSelectedLanguage(lang)}
+                className="selection-options"
+              >
                 {lang.displayName}
               </div>
             ))}
