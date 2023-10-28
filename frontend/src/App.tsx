@@ -34,7 +34,11 @@ function App() {
             />
           </div>
           <div className="editor-area">
-            <CodeContainer codes={inputCodes} setCodes={setInputCodes} />
+            <CodeContainer
+              codes={inputCodes}
+              setCodes={setInputCodes}
+              languageType={inputLanguage?.language}
+            />
             <ConvertButton
               inputLanguage={inputLanguage?.displayName}
               convertedLanguage={convertedLanguage?.displayName}
@@ -45,6 +49,7 @@ function App() {
               codes={convertedCodes}
               setCodes={setConvertedCodes}
               isDisabled={true}
+              languageType={convertedLanguage?.language}
             />
           </div>
         </>

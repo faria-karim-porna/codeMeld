@@ -1,13 +1,14 @@
 import Editor from "@monaco-editor/react";
 
-type CodeConteinerProps = {
+type CodeContainerProps = {
   isDisabled?: boolean;
+  languageType?: string;
   codes?: string;
   setCodes: React.Dispatch<React.SetStateAction<undefined | string>>;
 };
 
-function CodeContainer(props: CodeConteinerProps) {
-  const { isDisabled, codes, setCodes } = props;
+function CodeContainer(props: CodeContainerProps) {
+  const { isDisabled, languageType, codes, setCodes } = props;
 
   return (
     <>
@@ -17,7 +18,7 @@ function CodeContainer(props: CodeConteinerProps) {
             height={"400px"}
             width={"450px"}
             theme="vs-dark"
-            language="python"
+            language={languageType}
             value={codes}
             onChange={(value?: string) => {
               setCodes(value);

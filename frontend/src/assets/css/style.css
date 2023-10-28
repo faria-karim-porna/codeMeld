@@ -6,6 +6,8 @@ body {
   margin: 0;
   background-color: black;
   font-family: "Press Start 2P";
+  height: 100vh;
+  overflow: hidden;
 }
 
 .background-container {
@@ -162,4 +164,69 @@ body {
   width: 450px;
   position: absolute;
   top: 0px;
+}
+
+.convert-button {
+  border: 1px solid #00ffa0;
+  color: #00ffa0;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 20px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.convert-button:hover {
+  color: black;
+  background-color: #00ffa0;
+}
+
+.disabled-convert-button {
+  border: 1px solid #00ffa262;
+  color: #00ffa262;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.686);
+  cursor: not-allowed;
+}
+
+.converting {
+  display: flex;
+  flex-direction: column;
+  width: 234px;
+  align-items: center;
+}
+
+.converting-loader {
+  border: 1px solid #00ffa0;
+  border-radius: 10px;
+  height: 10px;
+  width: 180px;
+  align-self: center;
+  overflow: hidden;
+}
+
+.converting-loader div {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #00ffa0;
+  width: 30px;
+  position: relative;
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.converting-text {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #00ffa0;
 }
