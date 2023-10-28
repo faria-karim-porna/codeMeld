@@ -94,7 +94,7 @@ body {
   border: 1px solid #fff;
   border-radius: 10px;
   color: #fff;
-  width: 340px;
+  width: 28vw;
   padding: 5px 0px;
   cursor: pointer;
   background-color: black;
@@ -106,7 +106,7 @@ body {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   color: #fff;
-  width: 340px;
+  width: 28vw;
   padding: 5px 0px;
   cursor: pointer;
   background-color: black;
@@ -116,7 +116,7 @@ body {
   border: 1px solid #00ffa0;
   border-radius: 10px;
   color: #00ffa0;
-  width: 340px;
+  width: 28vw;
   padding: 5px 0px;
   cursor: pointer;
   background-color: black;
@@ -128,7 +128,7 @@ body {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   background-color: black;
-  width: 340px;
+  width: 28vw;
   padding: 5px 0px;
 }
 
@@ -244,5 +244,56 @@ body {
   .editor-area {
     display: block;
     margin-top: 15px;
+  }
+
+  .selection-box {
+    width: 70vw;
+  }
+
+  .open-selection-box {
+    width: 70vw;
+  }
+
+  .active-selection-box {
+    width: 70vw;
+  }
+
+  .selection-dropdown {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .selection-box {
+    font-size: 9px;
+  }
+
+  .open-selection-box {
+    font-size: 9px;
+  }
+
+  .active-selection-box {
+    font-size: 9px;
+  }
+
+  .selection-dropdown {
+    font-size: 9px;
+  }
+
+  .selection-options {
+    font-size: 7px;
+  }
+
+  .convert-button {
+    font-size: 9px;
+  }
+
+  .disabled-convert-button {
+    font-size: 9px;
   }
 }

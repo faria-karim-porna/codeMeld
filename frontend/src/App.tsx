@@ -27,8 +27,16 @@ function App() {
     []
   );
 
+  const isTablet = useMemo(
+    () =>
+      Utility.BrowserWindowUtil.DeviceRenderCategory.Tablet.some(
+        Utility.BrowserWindowUtil.IsCurrentRenderDevice
+      ),
+    []
+  );
+
   const { orientationText } = useDeviceOrientation();
-  console.log("orientationText", orientationText);
+
   return (
     <>
       <Background>
@@ -82,7 +90,7 @@ function App() {
                   languageType={inputLanguage?.language}
                 />
               </div>
-              <div className="my-4">
+              <div className={isTablet ? "my-4" : "my-2"}>
                 <ConvertButton
                   inputLanguage={inputLanguage?.displayName}
                   convertedLanguage={convertedLanguage?.displayName}
