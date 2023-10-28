@@ -59,7 +59,7 @@ body {
 .content {
   position: absolute;
   top: 0px;
-  width: 75%;
+  width: 80%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 450px;
+  width: 30vw;
   text-align: center;
   position: relative;
   top: 0px;

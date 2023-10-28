@@ -15,8 +15,8 @@ function CodeContainer(props: CodeContainerProps) {
       <div className="code-container">
         <div className="position-relative">
           <Editor
-            height={"400px"}
-            width={"450px"}
+            height={"50vh"}
+            width={"30vw"}
             theme="vs-dark"
             language={languageType}
             value={codes}
