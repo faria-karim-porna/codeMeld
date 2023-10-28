@@ -71,13 +71,13 @@ function Background(props: React.PropsWithChildren) {
     }, 3000);
   }, []);
   const dots = Array(40).fill(null);
-  const loader = Array(25).fill(null);
+  const dotStrip = Array(25).fill(null);
   return (
     <>
       <div className="background-container">
         <div className="dot-background">
-          {loader.map((_, index) => (
-            <div key={index} className="loader">
+          {dotStrip.map((_, index) => (
+            <div key={index} className="dot-strip">
               {dots.map((_, index) => (
                 <div key={index} className="dot"></div>
               ))}

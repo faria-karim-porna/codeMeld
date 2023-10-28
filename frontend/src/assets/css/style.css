@@ -19,14 +19,14 @@ body {
   height: 100vh;
 }
 
-.dot-background .loader {
+.dot-strip {
   position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.dot-background .loader .dot {
+.dot {
   position: relative;
   display: block;
   width: 15px;
