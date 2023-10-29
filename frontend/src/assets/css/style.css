@@ -296,4 +296,13 @@ body {
   .disabled-convert-button {
     font-size: 9px;
   }
+
+  .converting-loader {
+    width: 105px;
+    height: 5px;
+  }
+  
+  .converting-text {
+    font-size: 5px;
+  }
 }
